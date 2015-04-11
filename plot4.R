@@ -8,7 +8,7 @@ df <- data
 times<-paste(df$Date,df$Time)
 df$Date <- as.Date(df$Date,"%d/%m/%Y")
 df$Time <- strptime(times, "%d/%m/%Y %H:%M:%S")
-png(file = "plot4.png")
+png(file = "plot4.png",bg="transparent")
 par(mfrow = c(2, 2))
 plot(df$Time,df$Global_active_power,type="n",ylab="Global Active Power",
      xlab=NA)
