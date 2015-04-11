@@ -8,8 +8,8 @@ df <- data
 times<-paste(df$Date,df$Time)
 df$Date <- as.Date(df$Date,"%d/%m/%Y")
 df$Time <- strptime(times, "%d/%m/%Y %H:%M:%S")
+png(file="plot2.png",bg="transparent")
 plot(df$Time,df$Global_active_power,type="n",ylab="Global Active Power (kilowatts)",
      xlab=NA)
 lines(df$Time,df$Global_active_power,lty=1)
-dev.copy(png,file="plot2.png")
 dev.off()

@@ -8,8 +8,8 @@ df <- data
 times<-paste(df$Date,df$Time)
 df$Date <- as.Date(df$Date,"%d/%m/%Y")
 df$Time <- strptime(times, "%d/%m/%Y %H:%M:%S")
+png(file="plot1.png",bg="transparent")
 hist(df$Global_active_power,xlab="Global Active Power (kilowatts)",col="red",
      main="Global Active Power")
 title(main="Global Active Power")
-dev.copy(png,file="plot1.png")
 dev.off()

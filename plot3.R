@@ -8,7 +8,7 @@ df <- data
 times<-paste(df$Date,df$Time)
 df$Date <- as.Date(df$Date,"%d/%m/%Y")
 df$Time <- strptime(times, "%d/%m/%Y %H:%M:%S")
-png(file = "plot3.png")
+png(file = "plot3.png",bg="transparent")
 plot(df$Time,df$Sub_metering_1,type="n",ylab="Energy sub metering",xlab=NA)
 lines(df$Time,df$Sub_metering_1,col="black")
 lines(df$Time,df$Sub_metering_2,col="red")
